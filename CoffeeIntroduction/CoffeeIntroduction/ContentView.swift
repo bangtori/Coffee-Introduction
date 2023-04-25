@@ -13,7 +13,7 @@ struct ContentView: View {
         NavigationStack{
             List(coffeeStore.coffees){ coffee in
                 NavigationLink{
-                    Text("DetailView")
+                    DetailView(coffee: coffee)
                 }label: {
                     VStack(alignment: .leading){
                         Text(coffee.name)

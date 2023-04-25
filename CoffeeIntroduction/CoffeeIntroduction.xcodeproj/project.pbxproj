@@ -13,6 +13,7 @@
 		53A5C90629F837B40091AF8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53A5C90529F837B40091AF8D /* Preview Assets.xcassets */; };
 		53A5C90D29F838A90091AF8D /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A5C90C29F838A90091AF8D /* Coffee.swift */; };
 		53A5C90F29F839570091AF8D /* CoffeeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A5C90E29F839570091AF8D /* CoffeeStore.swift */; };
+		53A5C91129F83F950091AF8D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A5C91029F83F950091AF8D /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		53A5C90529F837B40091AF8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53A5C90C29F838A90091AF8D /* Coffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
 		53A5C90E29F839570091AF8D /* CoffeeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeStore.swift; sourceTree = "<group>"; };
+		53A5C91029F83F950091AF8D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				53A5C8FE29F837B30091AF8D /* CoffeeIntroductionApp.swift */,
 				53A5C90029F837B30091AF8D /* ContentView.swift */,
+				53A5C91029F83F950091AF8D /* DetailView.swift */,
 				53A5C90229F837B40091AF8D /* Assets.xcassets */,
 				53A5C90C29F838A90091AF8D /* Coffee.swift */,
 				53A5C90E29F839570091AF8D /* CoffeeStore.swift */,
@@ -146,6 +149,7 @@
 				53A5C90129F837B30091AF8D /* ContentView.swift in Sources */,
 				53A5C90F29F839570091AF8D /* CoffeeStore.swift in Sources */,
 				53A5C8FF29F837B30091AF8D /* CoffeeIntroductionApp.swift in Sources */,
+				53A5C91129F83F950091AF8D /* DetailView.swift in Sources */,
 				53A5C90D29F838A90091AF8D /* Coffee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
