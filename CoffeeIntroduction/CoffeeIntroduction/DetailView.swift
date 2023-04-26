@@ -23,6 +23,20 @@ struct DetailView: View {
             }
             Section{
                 Button{
+                    
+                }label: {
+                    Text("즐겨찾기에 추가하기")
+                }
+            }
+            Section{
+                Button{
+                    
+                }label: {
+                    Text("내용 수정하기")
+                }
+            }
+            Section{
+                Button{
                     let url:URL = URL(string: coffee.link)!
                     UIApplication.shared.open(url)
                 }label: {
