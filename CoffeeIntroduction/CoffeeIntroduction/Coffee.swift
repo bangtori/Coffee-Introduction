@@ -7,14 +7,22 @@
 
 import Foundation
 
-struct Coffee:Identifiable{
+class Coffee:Identifiable{
     var id:UUID = UUID()
     var name:String
     var imageName:String
     var description:String
     var link:String
+    var isFavorite:Bool
     
     var preDescription:String{
         return String(description.prefix(50))
+    }
+    init(name: String, imageName: String, description: String, link: String, isFavorite: Bool) {
+        self.name = name
+        self.imageName = imageName
+        self.description = description
+        self.link = link
+        self.isFavorite = isFavorite
     }
 }

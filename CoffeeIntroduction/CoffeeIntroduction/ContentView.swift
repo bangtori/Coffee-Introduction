@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var coffeeStore:CoffeeStore = CoffeeStore()
     @State var showAddView:Bool = false
-    
+    @State var favoriteCoffees:[Coffee] = []
     var body: some View {
         TabView{
             NavigationStack{
@@ -36,7 +36,6 @@ struct ContentView: View {
                 .toolbar(){
                     Button{
                         showAddView.toggle()
-                        print(showAddView)
                     }label: {
                         Image(systemName: "plus")
                     }
@@ -49,10 +48,32 @@ struct ContentView: View {
                 Image(systemName: "cup.and.saucer.fill")
                 Text("Coffee")
             }
+            //즐겨찾기 탭
             NavigationStack{
-                List{
-                    Text("1111")
-                    Text("2222")
+                List(favoriteCoffees){
+                    favoriteCoffee in
+                    NavigationLink{
+                        DetailView(coffee: favoriteCoffee)
+                    }label: {
+                        VStack(alignment: .leading){
+                            Text(favoriteCoffee.name)
+                                .font(.headline)
+                            HStack(alignment: .top){
+                                Text(favoriteCoffee.preDescription)
+                                Spacer()
+                                Image(favoriteCoffee.imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 80, height: 80)
+                            }
+                        }
+                    }
+                }
+                .navigationTitle("즐겨 찾기")
+            }
+            .onAppear{
+                favoriteCoffees = coffeeStore.coffees.filter{
+                    return $0.isFavorite == true
                 }
             }
             .tabItem{
