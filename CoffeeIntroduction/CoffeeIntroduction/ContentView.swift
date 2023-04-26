@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var coffeeStore:CoffeeStore = CoffeeStore()
+    @State var showAddView:Bool = false
+    
     var body: some View {
-        @ObservedObject var coffeeStore:CoffeeStore = CoffeeStore()
         NavigationStack{
             List(coffeeStore.coffees){ coffee in
                 NavigationLink{
@@ -30,6 +32,17 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Coffee")
+            .toolbar(){
+                Button{
+                    showAddView.toggle()
+                    print(showAddView)
+                }label: {
+                    Image(systemName: "plus")
+                }
+            }
+            .sheet(isPresented: $showAddView){
+                AddPage()
+            }
         }
     }
 }
