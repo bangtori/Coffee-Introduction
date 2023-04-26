@@ -14,23 +14,25 @@ struct ContentView: View {
     var body: some View {
         TabView{
             NavigationStack{
-                List(coffeeStore.coffees){ coffee in
-                    NavigationLink{
-                        DetailView(coffee: coffee)
-                    }label: {
-                        VStack(alignment: .leading){
-                            Text(coffee.name)
-                                .font(.headline)
-                            HStack(alignment: .top){
-                                Text(coffee.preDescription)
-                                Spacer()
-                                Image(coffee.imageName)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 80, height: 80)
+                List{
+                    ForEach(coffeeStore.coffees){ coffee in
+                        NavigationLink{
+                            DetailView(coffee: coffee)
+                        }label: {
+                            VStack(alignment: .leading){
+                                Text(coffee.name)
+                                    .font(.headline)
+                                HStack(alignment: .top){
+                                    Text(coffee.preDescription)
+                                    Spacer()
+                                    Image(coffee.imageName)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 80, height: 80)
+                                }
                             }
                         }
-                    }
+                    }.onDelete(perform: removeRows)
                 }
                 .navigationTitle("Coffee")
                 .toolbar(){
@@ -81,6 +83,9 @@ struct ContentView: View {
                 Text("즐겨찾기")
             }
         }
+    }
+    func removeRows(at offsets: IndexSet) {
+        coffeeStore.coffees.remove(atOffsets: offsets)
     }
 }
 
