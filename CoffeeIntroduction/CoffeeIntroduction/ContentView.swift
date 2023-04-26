@@ -12,36 +12,52 @@ struct ContentView: View {
     @State var showAddView:Bool = false
     
     var body: some View {
-        NavigationStack{
-            List(coffeeStore.coffees){ coffee in
-                NavigationLink{
-                    DetailView(coffee: coffee)
-                }label: {
-                    VStack(alignment: .leading){
-                        Text(coffee.name)
-                            .font(.headline)
-                        HStack(alignment: .top){
-                            Text(coffee.preDescription)
-                            Spacer()
-                            Image(coffee.imageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
+        TabView{
+            NavigationStack{
+                List(coffeeStore.coffees){ coffee in
+                    NavigationLink{
+                        DetailView(coffee: coffee)
+                    }label: {
+                        VStack(alignment: .leading){
+                            Text(coffee.name)
+                                .font(.headline)
+                            HStack(alignment: .top){
+                                Text(coffee.preDescription)
+                                Spacer()
+                                Image(coffee.imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 80, height: 80)
+                            }
                         }
                     }
                 }
-            }
-            .navigationTitle("Coffee")
-            .toolbar(){
-                Button{
-                    showAddView.toggle()
-                    print(showAddView)
-                }label: {
-                    Image(systemName: "plus")
+                .navigationTitle("Coffee")
+                .toolbar(){
+                    Button{
+                        showAddView.toggle()
+                        print(showAddView)
+                    }label: {
+                        Image(systemName: "plus")
+                    }
+                }
+                .sheet(isPresented: $showAddView){
+                    AddPage()
                 }
             }
-            .sheet(isPresented: $showAddView){
-                AddPage()
+            .tabItem{
+                Image(systemName: "cup.and.saucer.fill")
+                Text("Coffee")
+            }
+            NavigationStack{
+                List{
+                    Text("1111")
+                    Text("2222")
+                }
+            }
+            .tabItem{
+                Image(systemName: "star.fill")
+                Text("즐겨찾기")
             }
         }
     }
