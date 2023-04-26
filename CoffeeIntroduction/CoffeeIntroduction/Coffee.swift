@@ -25,4 +25,7 @@ class Coffee:Identifiable{
         self.link = link
         self.isFavorite = isFavorite
     }
+    func searchName(searchText:String)->Bool{
+        return name.hasPrefix(searchText)
+    }
 }

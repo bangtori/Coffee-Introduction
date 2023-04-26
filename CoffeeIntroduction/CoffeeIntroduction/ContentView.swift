@@ -11,11 +11,14 @@ struct ContentView: View {
     @ObservedObject var coffeeStore:CoffeeStore = CoffeeStore()
     @State var showAddView:Bool = false
     @State var favoriteCoffees:[Coffee] = []
+    
+    @State private var searchText = ""
     var body: some View {
         TabView{
             NavigationStack{
+                SearchBar(text: $searchText)
                 List{
-                    ForEach(coffeeStore.coffees){ coffee in
+                    ForEach(coffeeStore.coffees.filter{$0.searchName(searchText: searchText) || searchText == ""}){ coffee in
                         NavigationLink{
                             DetailView(coffee: coffee)
                         }label: {

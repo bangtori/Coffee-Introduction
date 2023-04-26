@@ -15,6 +15,7 @@
 		53A5C90F29F839570091AF8D /* CoffeeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A5C90E29F839570091AF8D /* CoffeeStore.swift */; };
 		53A5C91129F83F950091AF8D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A5C91029F83F950091AF8D /* DetailView.swift */; };
 		53A5C91329F8FA920091AF8D /* AddPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A5C91229F8FA920091AF8D /* AddPage.swift */; };
+		53A5C91729F966BD0091AF8D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A5C91629F966BD0091AF8D /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		53A5C90E29F839570091AF8D /* CoffeeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeStore.swift; sourceTree = "<group>"; };
 		53A5C91029F83F950091AF8D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		53A5C91229F8FA920091AF8D /* AddPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPage.swift; sourceTree = "<group>"; };
+		53A5C91629F966BD0091AF8D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				53A5C8FE29F837B30091AF8D /* CoffeeIntroductionApp.swift */,
 				53A5C90029F837B30091AF8D /* ContentView.swift */,
+				53A5C91629F966BD0091AF8D /* SearchBar.swift */,
 				53A5C91229F8FA920091AF8D /* AddPage.swift */,
 				53A5C91029F83F950091AF8D /* DetailView.swift */,
 				53A5C90229F837B40091AF8D /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A5C91729F966BD0091AF8D /* SearchBar.swift in Sources */,
 				53A5C90129F837B30091AF8D /* ContentView.swift in Sources */,
 				53A5C90F29F839570091AF8D /* CoffeeStore.swift in Sources */,
 				53A5C8FF29F837B30091AF8D /* CoffeeIntroductionApp.swift in Sources */,
